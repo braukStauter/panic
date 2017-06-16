@@ -12,7 +12,7 @@ AddEventHandler("chatCommandEntered", function(fullcommand)
         end
         
         
-        if(cm[2] == "/cp") then
+        if(cm[1] == "/cp") then
             if(pB == true) then
                 TriggerClientEvent('chatMessage', -1, 'PANIC', { 0, 255, 0 }, GetPlayerName(source) ..' HAS CLEARED THEIR PANIC BUTTON.')
                 pB = false
