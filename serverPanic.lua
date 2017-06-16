@@ -1,6 +1,6 @@
 --all work by braukStauter
 
-pB = false
+local pB = false
 
 RegisterServerEvent("chatCommandEntered")
 AddEventHandler("chatCommandEntered", function(fullcommand)
@@ -13,12 +13,12 @@ AddEventHandler("chatCommandEntered", function(fullcommand)
         
         
         if(cm[2] == "/cp") then
-            if(pB = true) then
+            if(pB == true) then
                 TriggerClientEvent('chatMessage', -1, 'PANIC', { 0, 255, 0 }, GetPlayerName(source) ..' HAS CLEARED THEIR PANIC BUTTON.')
                 pB = false
             end
-            if(pB = false) then
-                TriggerClientEvent("nopB", pB)
+            if(pB == false) then
+                TriggerClientEvent("nopB", source)
             end
         end
 end)
