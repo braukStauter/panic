@@ -12,17 +12,18 @@ AddEventHandler("chatCommandEntered", function(fullcommand)
         end
         
         
-        if(cm[1] == "/cp") then
+        if(cm[2] == "/cp") then
             if(pB == true) then
                 TriggerClientEvent('chatMessage', -1, 'PANIC', { 0, 255, 0 }, GetPlayerName(source) ..' HAS CLEARED THEIR PANIC BUTTON.')
                 pB = false
             end
             if(pB == false) then
-                TriggerClientEvent("nopB", source)
+                TriggerClientEvent("nopB", pB)
             end
         end
 end)
 
+print("PANICv0.0.1 by braukStauter initialized successfully.")
 
 --server command referance by albo1125
 function stringsplit(self, delimiter)
@@ -38,8 +39,6 @@ function tablelength(T)
         for _ in pairs(T) do count = count + 1 end
         return count
 end
-
-
 
 --all work by braukStauter
 --serverPanic

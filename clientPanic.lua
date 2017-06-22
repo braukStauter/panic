@@ -1,7 +1,7 @@
 --all work by braukStauter
 
 RegisterNetEvent("nopB")
-AddEventHandler("nopB" function(pB)
+AddEventHandler("nopB", function()
     local playerPed = GetPlayerPed(-1)
     if DoesEntityExist(playerPed) then
         Citizen.CreateThread(function()
